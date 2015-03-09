@@ -1,6 +1,7 @@
 angular.module('app', [
   //'thebeholder.left',
   //'thebeholder.right',
+  'app.visualizer',
   'ngRoute'
   ])
 
