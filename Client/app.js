@@ -20,9 +20,7 @@ window.onload = function () {
 		')
 	    .then(function(res) {*/
 
-	fetch('
-	    Audio/NewWaveBossaNova
-		')
+	fetch('Audio/NewWaveBossaNova')
 	    .then(function(res) {
 
 	return audioContext.decodeAudioData(res.arrayBuffer());
