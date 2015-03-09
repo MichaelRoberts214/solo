@@ -1,6 +1,7 @@
 angular.module('app', [
   //'thebeholder.left',
   //'thebeholder.right',
+  //'stereo-analyser-node',
   'app.visualizer',
   'ngRoute'
   ])

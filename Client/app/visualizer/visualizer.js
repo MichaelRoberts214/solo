@@ -1,10 +1,16 @@
+
 angular.module('app.visualizer', [])
 
 .controller('VisualizerController', function ($scope, Links) {
+  $scope.audioContext = require('angular-audio-context');
 
   // $scope.data = {
   //   links: []
   // };
+
+  $scope.data = {
+    freqs: []
+  };
 
   // $scope.incrementVisits = function(link){
   //   // on click

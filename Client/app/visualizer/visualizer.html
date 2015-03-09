@@ -1,10 +1,12 @@
 <div id='container' ng-controller = 'VisualizerController' >
-  <div ng-repeat='n in data.links'>
+  <div ng-repeat='n in data.freqs'>
     <div class='info'>
-      <div class='visits'><span class='count'>{{n.visits}}</span> Visits</div>
+      <!--<div class='visits'><span class='count'>{{n.visits}}</span> Visits</div>
       <div class='title'>{{n.title}}</div>
       <div class='original'>{{n.url}}</div>
-      <a href='api/links/{{n.code}}'>{{n.base_url}}/{{n.code}}</a>
+      <a href='api/links/{{n.code}}'>{{n.base_url}}/{{n.code}}</a>-->
+      <h2>HUBBA DUBBA {{freqs}}</h2>
     </div>
   </div>
+  <!--<script type="text/javascript" src="../../../bower_components/stereo-analyser-node/build/stereo-analyser-node.js"></script>-->
 </div>

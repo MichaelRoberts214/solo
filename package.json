@@ -1,0 +1,13 @@
+{
+  "name": "2015-02-solo",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "angular-audio-context": "0.0.2"
+  }
+}
