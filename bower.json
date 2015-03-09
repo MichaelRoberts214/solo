@@ -2,12 +2,13 @@
   "name": "thebeholder",
   "version": "0.0.0",
   "dependencies": {
-    "stereo-analyser-node" : "~0.1.2"
+    "stereo-analyser-node" : "~0.1.2",
+    "materialize": "~0.95.2"
   },
   "ignore": [
     "**/.*",
     "package.json",
-    "lib",
+    "Client",
     "test"
   ]
 }
