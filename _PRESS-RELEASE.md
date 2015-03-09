@@ -1,4 +1,4 @@
-# Project Name #
+# The Beholder #
 
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
@@ -19,26 +19,47 @@ Once the project moves into development, the press release can be used as a touc
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
 
+  The name of this product is The Beholder.
+
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+
+  The target market for this product is anyone who wants to visualize their audio.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
 
+  The beholder is an audio visualizater application intended to be sleek and easy on the eyes. Features such
+  as monochrome and colorblind mode will enable optimal user experience, whereas different visualization
+  patterns will be available as well.
+
 ## Problem ##
   > Describe the problem your product solves.
+
+  This application hopes to solve the problem of the boredom of just listening to music and staring at the
+  audio player. This app will give the user intuitive options to give the most effective user experience.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
 
+  This product solves the problem by providing audio visualization based on user settings. The settings menu will be easy to use yet unobtrusive.
+
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+
+  "Our aim is to provide the smoothest user experience possible. We won't let the app stand between you and your goals of simple relaxation." -Boyzter Uhs
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
 
+  Getting started is easy: just install the app and move your favorite songs into the beholder folder.
+
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
 
+  "I appreciated how I never felt lost when navigating the app." -John Fakename
+
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+
+  The Beholder will show you your audio cleanly and up to your expectations. Install and enjoy today!
