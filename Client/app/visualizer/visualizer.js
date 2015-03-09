@@ -1,13 +1,8 @@
 
 angular.module('app.visualizer', [])
 
-.controller('VisualizerController', function ($scope, Links) {
+.controller('VisualizerController', function ($scope) {
   $scope.audioContext = require('angular-audio-context');
-
-  // $scope.data = {
-  //   links: []
-  // };
-
   $scope.data = {
     freqs: []
   };

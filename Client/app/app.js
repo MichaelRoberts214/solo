@@ -8,11 +8,28 @@ angular.module('app', [
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider
+    // .when('/', {
+    //   templateUrl: 'app/visualizer/visualizer.html',
+    //   controller: 'VisualizerController'
+    // })
     .otherwise({
       redirectTo: '/'
     })
 }])
-.run();
+.run(/*function($scope) {
+  $scope.go = function ( path ) {
+    $location.path( path );
+  };
+}*/)
+
+.directive('visualize', function() {
+  return {
+      restrict: 'AE',
+      replace: 'true',
+      template: '<h3>Hello World!!</h3>'
+  };
+});
+;
 
 
 
