@@ -65,64 +65,67 @@ window.onload = function () {
 
 // use python's simple server 
 // /NewWaveBossaNova.mp3
-  fetch('http://localhost:8000')
-      .then(function(res) {
 
-  return audioContext.decodeAudioData(res.arrayBuffer());
-  }).then(function(audioBuffer) {
-    app.audioBuffer = audioBuffer;
-    console.log("buffer",audioBuffer);
-  });
+// uncomment below VVVVV
 
-  console.log("app object:",app);
+  // fetch('http://localhost:8000')
+  //     .then(function(res) {
 
-  var bufferSource, analyser;
-  var fftSize = 2048;
-  var arrayL = new Float32Array(fftSize);
-  var arrayR = new Float32Array(fftSize);
+  // return audioContext.decodeAudioData(res.arrayBuffer());
+  // }).then(function(audioBuffer) {
+  //   app.audioBuffer = audioBuffer;
+  //   console.log("buffer",audioBuffer);
+  // });
 
-  console.log("array L:",arrayL);
+  // console.log("app object:",app);
 
-  function start() {
-    bufferSource = audioContext.createBufferSource();
-    analyser = new StereoAnalyserNode(audioContext);
+  // var bufferSource, analyser;
+  // var fftSize = 2048;
+  // var arrayL = new Float32Array(fftSize);
+  // var arrayR = new Float32Array(fftSize);
 
-    analyser.fftSize = fftSize;
+  // console.log("array L:",arrayL);
 
-    bufferSource.buffer = app.audioBuffer;
-    bufferSource.start(audioContext.currentTime);
-    bufferSource.onended = function() {
-      app.stop();
-    };
+  // function start() {
+  //   bufferSource = audioContext.createBufferSource();
+  //   analyser = new StereoAnalyserNode(audioContext);
 
-    bufferSource.connect(analyser);
-    analyser.connect(audioContext.destination);
+  //   analyser.fftSize = fftSize;
 
-    requestAnimationFrame(animate);
-  }
+  //   bufferSource.buffer = app.audioBuffer;
+  //   bufferSource.start(audioContext.currentTime);
+  //   bufferSource.onended = function() {
+  //     app.stop();
+  //   };
 
-  function stop() {
-    bufferSource.stop(audioContext.currentTime);
-    bufferSource.disconnect();
-    analyser.disconnect();
-  }
+  //   bufferSource.connect(analyser);
+  //   analyser.connect(audioContext.destination);
 
-  function animate() {
-    analyser.getFloatTimeDomainData(arrayL, arrayR);
-    app.drawTimeDomainData(arrayL, arrayR);
+  //   requestAnimationFrame(animate);
+  // }
 
-    if (app.isPlaying) {
-      setTimeout(function() {
-        requestAnimationFrame(animate);
-      }, 50);
-    }
-  }
+  // function stop() {
+  //   bufferSource.stop(audioContext.currentTime);
+  //   bufferSource.disconnect();
+  //   analyser.disconnect();
+  // }
 
-  document.getElementById("clickMe").onclick = function() {
-    console.log("started");
-    // it gets here but the start() function is broken 
-    start();
-  }
+  // function animate() {
+  //   analyser.getFloatTimeDomainData(arrayL, arrayR);
+  //   app.drawTimeDomainData(arrayL, arrayR);
+
+  //   if (app.isPlaying) {
+  //     setTimeout(function() {
+  //       requestAnimationFrame(animate);
+  //     }, 50);
+  //   }
+  // }
+
+  // document.getElementById("clickMe").onclick = function() {
+  //   console.log("started");
+  //   // it gets here but the start() function is broken 
+  //   start();
+  // }
 
 
   /******************
@@ -170,7 +173,8 @@ window.onload = function () {
       .data(data)
     .enter().append("div").attr("class", "bar")
       .style("width", function(d) { return x(d) + "px"; })
-      .text(function(d) { return d; });
+      .style("height", function(d) { return 10 + "px"});
+      //.text(function(d) { return d; });
 
   // var visual = d3.select(".visual");
   // var bar = visual.selectAll("div");

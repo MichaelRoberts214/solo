@@ -142,3 +142,9 @@ input[type=radio]:checked {
     -o-background-size: 28px 28px;
     background-size: 28px 28px;
 }
+
+.bar {
+    background: rgb(255,0,0);
+    padding: 1em;
+    margin: 0;
+    color: rgb(255,0,0);
