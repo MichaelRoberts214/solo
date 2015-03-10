@@ -7,6 +7,9 @@
   <body>
     <h1>The Beholder</h1>
     <!--<button name="start" class="start" id="start" ng-click="go('/visualize')">begin</button>-->
+    <button id="clickMe">visualize</button>
+    <div class="visual"></div>
+    <!--<button class="btn btn-default" v-on="click: toggle">{{ !audioBuffer ? "Loading.." : isPlaying ? "Stop" : "Start" }}</button>-->
     <div visualize></div>
 
     <nav>
@@ -37,6 +40,7 @@
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
      below them until after the scripts load-->
 
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
     <script type="text/javascript" src='../bower_components/angular-route/angular-route.js'></script>
     <script type="text/javascript" src="./app/app.js"></script>

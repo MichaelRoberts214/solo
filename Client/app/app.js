@@ -62,12 +62,16 @@ window.onload = function () {
   //   ')
   //     .then(function(res) {
 
-  fetch('http://localhost:8000/NewWaveBossaNova.mp3')
+
+// use python's simple server 
+// /NewWaveBossaNova.mp3
+  fetch('http://localhost:8000')
       .then(function(res) {
 
   return audioContext.decodeAudioData(res.arrayBuffer());
   }).then(function(audioBuffer) {
     app.audioBuffer = audioBuffer;
+    console.log("buffer",audioBuffer);
   });
 
   console.log("app object:",app);
@@ -114,7 +118,72 @@ window.onload = function () {
     }
   }
 
+  document.getElementById("clickMe").onclick = function() {
+    console.log("started");
+    // it gets here but the start() function is broken 
+    start();
+  }
+
+
+  /******************
+  // d3 visualization
+  ******************/
+
+  // var width = 800;
+  // var height = 600;
+
+  // var container = d3.selectAll('body').append('svg')
+  //   .attr('width', width)
+  //   .attr('height', height)
+  //   .style("border", "1px solid white")
+
+  // var bars = 3; // set this to the number of frequencies later
+  // var generateArray = function (n) {
+  //   var generatedArray = [];
+  //   for (var i = 0; i < n; i++) {
+  //     generatedArray.push(i);
+  //   }
+  //   return generatedArray
+  // }
+
+  // var imgs = d3.select('svg').selectAll("image")
+  //   .data(generateArray(bars));
+
+  // imgs.enter()
+  //   .append("svg:image")
+  //   .attr("class", "enemy") //this applies to the whole group
+  //   .attr("xlink:href", "shuriken.png")
+  //   // .attr("x", function(d){ return d * 30})
+  //   .attr("x", "0")
+  //   .attr("y", "0") // put in circle - sin and cos
+  //   .attr("width", "40")
+  //   .attr("height", "40");
+
+  var data = [3,1,2];
+
+  var x = d3.scale.linear()
+    .domain([0, d3.max(data)])
+    .range([0, 420]);
+
+  d3.select(".visual")
+    .selectAll("div")
+      .data(data)
+    .enter().append("div").attr("class", "bar")
+      .style("width", function(d) { return x(d) + "px"; })
+      .text(function(d) { return d; });
+
+  // var visual = d3.select(".visual");
+  // var bar = visual.selectAll("div");
+  // var barUpdate = bar.data(data);
+  // var barEnter = barUpdate.enter().append("div");
+  // barEnter.style("width", function(d) { return d * 10 + "px"; });
+  // barEnter.text(function(d) { return d; });
+
+
+
 }
+
+
 
 
 
