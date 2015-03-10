@@ -145,6 +145,6 @@ input[type=radio]:checked {
 
 .bar {
     background: rgb(255,0,0);
-    padding: 1em;
-    margin: 0;
+    padding: 1px;
+    margin: 2px;
     color: rgb(255,0,0);

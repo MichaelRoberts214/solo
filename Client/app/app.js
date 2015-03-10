@@ -162,26 +162,42 @@ window.onload = function () {
   //   .attr("width", "40")
   //   .attr("height", "40");
 
-  var data = [3,1,2];
+  var data = [3, 1, 2, 4, 3];
 
   var x = d3.scale.linear()
     .domain([0, d3.max(data)])
     .range([0, 420]);
 
-  d3.select(".visual")
+  var barRender = function() {
+    d3.select(".visual")
     .selectAll("div")
       .data(data)
     .enter().append("div").attr("class", "bar")
       .style("width", function(d) { return x(d) + "px"; })
       .style("height", function(d) { return 10 + "px"});
       //.text(function(d) { return d; });
+  };
 
-  // var visual = d3.select(".visual");
-  // var bar = visual.selectAll("div");
-  // var barUpdate = bar.data(data);
-  // var barEnter = barUpdate.enter().append("div");
-  // barEnter.style("width", function(d) { return d * 10 + "px"; });
-  // barEnter.text(function(d) { return d; });
+  var barRemove = function () {
+    d3.select(".visual")
+    .selectAll("div").remove();
+  };
+
+  // run the fake bar generation
+  setInterval(function(){
+    // remove old bar
+    barRemove();
+    // generate random numbers between 1 and 5
+    for(var i = 0; i < data.length; i++) {
+      // fill the data array
+      data[i] = Math.ceil(7 * Math.random());//random number
+    }
+    // render the bars
+    barRender();
+    console.log("rendered:", data);
+  }, 50);
+
+
 
 
 
