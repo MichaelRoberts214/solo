@@ -2,9 +2,9 @@
 angular.module('app.visualizer', [])
 
 .controller('VisualizerController', function ($scope) {
-  $scope.audioContext = require('angular-audio-context');
+  //$scope.audioContext = require('angular-audio-context');
   $scope.data = {
-    freqs: []
+    freqs: [0,1,2]
   };
 
   // $scope.incrementVisits = function(link){

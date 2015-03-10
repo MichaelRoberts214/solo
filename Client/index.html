@@ -41,7 +41,39 @@
     <script type="text/javascript" src='../bower_components/angular-route/angular-route.js'></script>
     <script type="text/javascript" src="./app/app.js"></script>
     <script type="text/javascript" src="./app/visualizer/visualizer.js"></script>
-    <!--<script type="text/javascript" src="../../bower_components/stereo-analyser-node/build/stereo-analyser-node.js"></script>-->
+    <script type="text/javascript" src="../bower_components/stereo-analyser-node/build/stereo-analyser-node.js"></script>
+    <!--<script src="//cdn.jsdelivr.net/es6-promise/1.0.0/promise.min.js"></script>
+    <script src="//mohayonao.github.io/promise-decode-audio-data/build/promise-decode-audio-data.js"></script>
+    <script src="//mohayonao.github.io/get-float-time-domain-data/build/get-float-time-domain-data.js"></script>
+    -->
+
+
+    <script>
+      var AudioContext = window.AudioContext || window.webkitAudioContext;
+      var $ = document.getElementById.bind(document);
+
+      function fetch(url) {
+        return new Promise(function(resolve, reject) {
+          var xhr = new XMLHttpRequest();
+          xhr.open("GET", url);
+          if (url.indexOf(".mp3") !== -1) {
+            xhr.responseType = "arraybuffer";
+          }
+          xhr.onload = function() {
+            resolve({
+              text: function() {
+                return xhr.response;
+              },
+              arrayBuffer: function() {
+                return xhr.response;
+              }
+            });
+          };
+          xhr.onerror = reject;
+          xhr.send();
+        });
+      }
+    </script>
 
     <!--
     <script src="bower_components/jquery/jquery.min.js"></script>
