@@ -62,7 +62,7 @@ window.onload = function () {
   //   ')
   //     .then(function(res) {
 
-  fetch('Audio/NewWaveBossaNova')
+  fetch('http://localhost:8000/NewWaveBossaNova.mp3')
       .then(function(res) {
 
   return audioContext.decodeAudioData(res.arrayBuffer());
